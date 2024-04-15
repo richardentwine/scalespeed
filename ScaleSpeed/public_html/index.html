@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ScaleSpeed</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <script src="scalespeed.js"></script>
+    </head>
+    <body>
+        <div id="scalespeed">
+            <h4>ScaleSpeed Calculator</h4>
+            <div id="runInfo">
+                <table>
+                    <tr><td>Distance travelled(mm):</td><td><input type="text" name="distance" size="9" id="distance" value="300"></td></tr>
+                    <tr><td>Scale:</td><td><select name="scale" id="scale">
+                                <option value="160">N gauge</option>
+                                <option value="76.2" selected>OO gauge</option>
+                                <option value="43.54">O gauge</option>
+                            </select></td></tr>
+                    <tr><td><input type="button" name="control" id="control" value="Start" onclick="startTime();"></td>
+                        <td><input type="button" name="cancelControl" id="cancelControl" value="Cancel" onclick=""></td></tr>
+                </table>
+                <h4>Results for this pass:</h4>
+
+                <div id="detailedRunInfo">
+                    <table>
+                        <tr><td>Start Time:</td><td><span id="started">0</span></td></tr>
+                        <tr><td>Finish Time:</td><td><span id="stopped">0</span></td></tr>
+                        <tr><td>Time taken (seconds):</td><td><span id="duration">0</span></td></tr>
+                        <tr><td>The speed is:</td><td><span id="actSpeed">0</span> mm/s</td></tr>
+                        <tr><td>which is:</td><td><span id="speedKm">0</span> km/h</td></tr>
+                        <tr><td>which equates to:</td><td><span id="final">0</span> km/h</td></tr>
+                        <tr><td>or:</td><td><span id="mph">0</span> mph</td></tr>  
+                    </table>
+                    <p><input type="button" name="lessDetail" id="lessDetail" class="controlButton" value="Show less Detail" onclick="lessDetail();"></p>
+                </div>
+
+                <div id="basicRunInfo">
+                    <p><span id="basicMph">0</span> mph</p>
+                    <p><input type="button" name="lessDetail" id="moreDetail" class="controlButton" value="Show more detail" onclick="moreDetail();"></p>
+                </div>
+            </div>
+            
+            <div id="resultsDiv">
+            <h4>Results for all passes:</h4>
+                      
+            <p>Average Time: <span id="avTime">0</span> seconds</p>
+            <p>Average Speed: <span id="avSpeed">0</span> Mph</p>
+            
+            <table id="tableResults">
+                <thead><tr><th>Time taken</th><th>Speed</th></tr></thead>
+                <tbody></tbody>
+            </table>
+            <p><input type="button" name="clearTable" id="clearTable" class="controlButton" value="Clear table" onclick="clearTable();"></p>
+            <p><input type="button" name="warningsControl" id="warningsControl" class="controlButton" value="Turn off warnings" onclick="warningsOff();"><br>
+                <span class="note" id="warningsNote">You are set to get a warning before any data is deleted. (Especially useful for touch screens)</span></p>
+            </div>
+            </div>    
+        
+        <div id="footer">
+            <p><a href="http://www.rmweb.co.uk/community/index.php?/blog/1520-knappers-scalespeed-tool-blog/">Visit this tools blog on RMweb</a></p>
+            <p>All rights reserved.</p>
+            <p><a href="http://entwinesolutions.co.uk">Entwine Solutions</a></p>
+        </div>
+                <!-- Google analytics code -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4918218-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<!-- End of Google analytics code -->
+    </body>
+</html>
