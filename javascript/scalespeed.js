@@ -1,6 +1,6 @@
-var displayedState = document.getElementById("runningState").getElementsByTagName('p')[0];
-var start;
-var stop;
+const displayedState = document.getElementById("runningState").getElementsByTagName('p')[0];
+let start;
+let stop;
 
 /*
 Deletes a row from the results table 
@@ -98,7 +98,7 @@ function clearData()
 }
 
 /*
-Calulates the average of all passes as each pass is recorded
+Calculates the average of all passes as each pass is recorded
 */
 function calculateAverages()
 {
