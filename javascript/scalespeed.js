@@ -5,8 +5,7 @@ let stop;
 /*
 Deletes a row from the results table 
 */
-function deleteRow(deleteButton)
-{
+function deleteRow(deleteButton){
     let confirmResult;
     const row = deleteButton.parentNode.parentNode;
     const warningStatus = document.getElementById("warningsControl").getAttribute("onclick");
@@ -34,8 +33,7 @@ function deleteRow(deleteButton)
 /*
 Needed when the table is cleared or when a row is deleted   
 */
-function resetAvTotals()
-{
+function resetAvTotals(){
     document.getElementById("avTime").innerHTML = "0";
     document.getElementById("avSpeed").innerHTML = "0";
 }
@@ -43,8 +41,7 @@ function resetAvTotals()
 /*
 Clears the results table
 */
-function clearTable()
-{
+function clearTable(){
     if (document.getElementById('tableResults').tBodies[0].rows.length !== 0)
     {
         let confirmResult;
@@ -66,35 +63,14 @@ function clearTable()
 /*
 Clears the pass data after a new passed is started, or a pass is cancelled
 */
-function clearData()
-{
-    var stopped;
-    var duration;
-    var actSpeed;
-    var speedKm;
-    var final;
-    var mph;
-    
-    stopped = document.getElementById("stopped");
-    stopped.innerHTML = "0";
-    
-    duration = document.getElementById("duration");
-    duration.innerHTML = "0";
-    
-    actSpeed = document.getElementById("actSpeed");
-    actSpeed.innerHTML = "0";
-    
-    speedKm = document.getElementById("speedKm");
-    speedKm.innerHTML = "0";
-    
-    final = document.getElementById("final");
-    final.innerHTML = "0";
-    
-    mph = document.getElementById("mph");
-    mph.innerHTML = "0";
-    
-    basicMph = document.getElementById("basicMph");
-    basicMph.innerHTML = "0";     
+function clearData(){
+    const runTable = document.getElementById("detailedRunInfo");
+    const cells = runTable.getElementsByTagName("span");
+
+    //skips start time
+    for (let i = 1; i < cells.length; i++){
+        cells[i].innerHTML = "0"    
+    }   
 }
 
 /*
