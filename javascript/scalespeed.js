@@ -36,8 +36,8 @@ Needed when the table is cleared or when a row is deleted
 */
 function resetAvTotals()
 {
-    document.getElementById("avTime").avTime.innerHTML = "0";
-    document.getElementById("avSpeed").avSpeed.innerHTML = "0";
+    document.getElementById("avTime").innerHTML = "0";
+    document.getElementById("avSpeed").innerHTML = "0";
 }
 
 /*
