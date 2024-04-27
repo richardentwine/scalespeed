@@ -5,18 +5,19 @@ let stop;
 /*
 Deletes a row from the results table 
 */
-function deleteRow(t)
+function deleteRow(deleteButton)
 {
-    var r;
-    var row = t.parentNode.parentNode;
-    
-    var warningStatus = document.getElementById("warningsControl").getAttribute("onclick");
+    let confirmResult;
+    const row = deleteButton.parentNode.parentNode;
+    const warningStatus = document.getElementById("warningsControl").getAttribute("onclick");
+
+    //presence of warningsOff() function means warnings are presently on 
     if (warningStatus === "warningsOff();")
         {            
-            r = confirm("You have selected a row to delete. Selecting 'OK' will delete the row.");            
+            confirmResult = confirm("You have selected a row to delete. Selecting 'OK' will delete the row.");            
         }
         
-    if (r === true || warningStatus === "warningsOn();")
+    if ( confirmResult === true || warningStatus === "warningsOn();")
     {
         document.getElementById("tableResults").deleteRow(row.rowIndex);
         if (document.getElementById('tableResults').tBodies[0].rows.length === 0)
@@ -136,7 +137,7 @@ function warningsOff() {
             warningsControl.setAttribute("value", "Turn warnings back on");
             warningsControl.setAttribute("onClick", "warningsOn();");
             var warningsNote = document.getElementById("warningsNote");
-            warningsNote.innerHTML = "Warnings are off. Data will be deleted without a popup warning.(Not recommened for touch screens unless care is taken)";            
+            warningsNote.innerHTML = "Warnings are off. Data will be deleted without a popup warning.(Not recommended for touch screens unless care is taken)";            
         }
 }
 
