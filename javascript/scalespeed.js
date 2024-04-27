@@ -47,16 +47,17 @@ function clearTable()
 {
     if (document.getElementById('tableResults').tBodies[0].rows.length !== 0)
     {
-        var r;
-        var warningStatus = document.getElementById("warningsControl").getAttribute("onclick");
+        let confirmResult;
+        const warningStatus = document.getElementById("warningsControl").getAttribute("onclick");
+
+        //presence of warningsOff() function means warnings are presently on
         if (warningStatus === "warningsOff();")
         {
-            r = confirm("You have selected to clear the table of results. Selecting 'OK' will delete all results.");
+            confirmResult = confirm("You have selected to clear the table of results. Selecting 'OK' will delete all results.");
         }
-        if (r === true || warningStatus === "warningsOn();")
+        if (confirmResult === true || warningStatus === "warningsOn();")
         {
-            var tableResults = document.getElementById("tableResults").getElementsByTagName('tbody')[0];
-            tableResults.innerHTML = "";
+            document.getElementById("tableResults").getElementsByTagName('tbody')[0].innerHTML = "";
             resetAvTotals();
         }
     }
