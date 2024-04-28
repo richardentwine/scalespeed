@@ -11,20 +11,15 @@ function deleteRow(deleteButton){
     const warningStatus = document.getElementById("warningsControl").getAttribute("onclick");
 
     //presence of warningsOff() function means warnings are presently on 
-    if (warningStatus === "warningsOff();")
-        {            
+    if (warningStatus === "warningsOff();"){            
             confirmResult = confirm("You have selected a row to delete. Selecting 'OK' will delete the row.");            
         }
         
-    if ( confirmResult === true || warningStatus === "warningsOn();")
-    {
+    if ( confirmResult === true || warningStatus === "warningsOn();"){
         document.getElementById("tableResults").deleteRow(row.rowIndex);
-        if (document.getElementById('tableResults').tBodies[0].rows.length === 0)
-        {
+        if (document.getElementById('tableResults').tBodies[0].rows.length === 0){
             resetAvTotals();
-        }
-        else
-        {
+        } else {
             calculateAverages();
         }
     }
@@ -42,18 +37,15 @@ function resetAvTotals(){
 Clears the results table
 */
 function clearTable(){
-    if (document.getElementById('tableResults').tBodies[0].rows.length !== 0)
-    {
+    if (document.getElementById('tableResults').tBodies[0].rows.length !== 0){
         let confirmResult;
         const warningStatus = document.getElementById("warningsControl").getAttribute("onclick");
 
         //presence of warningsOff() function means warnings are presently on
-        if (warningStatus === "warningsOff();")
-        {
+        if (warningStatus === "warningsOff();"){
             confirmResult = confirm("You have selected to clear the table of results. Selecting 'OK' will delete all results.");
         }
-        if (confirmResult === true || warningStatus === "warningsOn();")
-        {
+        if (confirmResult === true || warningStatus === "warningsOn();"){
             document.getElementById("tableResults").getElementsByTagName('tbody')[0].innerHTML = "";
             resetAvTotals();
         }
@@ -78,27 +70,20 @@ Calculates the average of all passes as each pass is recorded
 */
 function calculateAverages()
 {
-    var numRows = document.getElementById('tableResults').tBodies[0].rows.length;
-    var averageTimeTotal = 0;
-    var averageSpeedTotal = 0;
-    var cellTime = 0;
-    var cellSpeed = 0;
+    const numRows = document.getElementById('tableResults').tBodies[0].rows.length;
+    let averageTimeTotal = 0;
+    let averageSpeedTotal = 0;
     
-    for (var i = 0; i < numRows; i ++)
-    {
-        cellTime = parseFloat(document.getElementById('tableResults').tBodies[0].rows[i].cells[0].innerHTML);
-        averageTimeTotal = averageTimeTotal + cellTime;
-        cellSpeed = parseFloat(document.getElementById('tableResults').tBodies[0].rows[i].cells[1].innerHTML);
-        averageSpeedTotal = averageSpeedTotal + cellSpeed;
+    for (let i = 0; i < numRows; i ++){
+        averageTimeTotal = averageTimeTotal + parseFloat(document.getElementById('tableResults').tBodies[0].rows[i].cells[0].innerHTML);
+        averageSpeedTotal = averageSpeedTotal + parseFloat(document.getElementById('tableResults').tBodies[0].rows[i].cells[1].innerHTML);
     }
     
-    var avTime = document.getElementById("avTime");
     averageTimeTotal = averageTimeTotal / numRows;
-    avTime.innerHTML = averageTimeTotal.toFixed(2);
+    document.getElementById("avTime").innerHTML = averageTimeTotal.toFixed(2);
     
-    var avSpeed = document.getElementById("avSpeed");
     averageSpeedTotal = averageSpeedTotal / numRows;
-    avSpeed.innerHTML = averageSpeedTotal.toFixed(2);    
+    document.getElementById("avSpeed").innerHTML = averageSpeedTotal.toFixed(2);    
 }
 
 /*
