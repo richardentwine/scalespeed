@@ -3,10 +3,11 @@
 ## Needs doing
 - [ ] Switch away from var
 - [ ] Break up StopTime()
-- [ ] change poor single character variable names
-- [ ] amalgamate lessDetail() and moreDetail()
-- [ ] amalgamate warningsOff() and warningsOn()
-- [ ] clearData() refactor to DRY it
+- [ ] Change poor single character variable names
+- [ ] Amalgamate lessDetail() and moreDetail()
+- [ ] Amalgamate warningsOff() and warningsOn()
+- [ ] ClearData() refactor to DRY it
+- [ ] Overhaul frontend
 
 ## Possible changes
 - [ ] Change to TDD
