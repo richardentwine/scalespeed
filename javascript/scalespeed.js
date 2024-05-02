@@ -89,6 +89,14 @@ function calculateAverages()
 /*
 Turns off the pop up warnings when deleting recorded runs
 */
+function toggleWarnings() {
+    //Put up alert box
+
+    //After response check to see if warnings are on or off
+
+    //Toggle elements as necessary
+}
+
 function warningsOff() {
     var response = confirm("You have selected to turn off warnings. Selecting 'OK' will mean no warnings will show when you click or tap on a delete button.");
     if (response === true)
