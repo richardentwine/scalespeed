@@ -8,14 +8,14 @@ Deletes a row from the results table
 function deleteRow(deleteButton){
     let confirmResult;
     const row = deleteButton.parentNode.parentNode;
-    const warningStatus = document.getElementById("warningsControl").getAttribute("onclick");
+    const warningStatus = document.getElementById("warningsControl").value;
 
     //presence of warningsOff() function means warnings are presently on 
-    if (warningStatus === "warningsOff();"){            
+    if (warningStatus === "Turn warnings off"){            
             confirmResult = confirm("You have selected a row to delete. Selecting 'OK' will delete the row.");            
         }
         
-    if ( confirmResult === true || warningStatus === "warningsOn();"){
+    if ( confirmResult === true || warningStatus === "Turn warnings on"){
         document.getElementById("tableResults").deleteRow(row.rowIndex);
         if (document.getElementById('tableResults').tBodies[0].rows.length === 0){
             resetAvTotals();
@@ -90,38 +90,21 @@ function calculateAverages()
 Turns off the pop up warnings when deleting recorded runs
 */
 function toggleWarnings() {
-    //Put up alert box
-
-    //After response check to see if warnings are on or off
-
-    //Toggle elements as necessary
-}
-
-function warningsOff() {
-    var response = confirm("You have selected to turn off warnings. Selecting 'OK' will mean no warnings will show when you click or tap on a delete button.");
-    if (response === true)
-        {
-            var warningsControl = document.getElementById("warningsControl");
-            warningsControl.setAttribute("value", "Turn warnings back on");
-            warningsControl.setAttribute("onClick", "warningsOn();");
-            var warningsNote = document.getElementById("warningsNote");
-            warningsNote.innerHTML = "Warnings are off. Data will be deleted without a popup warning.(Not recommended for touch screens unless care is taken)";            
-        }
-}
-
-/*
-Turns on the pop up warnings when deleting recorded runs
-*/
-function warningsOn() {
-    var response = confirm("You have selected to turn on warnings. Selecting 'OK' will means warnings will show when you click or tap on a button to delete data.");
-    if (response === true)
-        {
-            var warningsControl = document.getElementById("warningsControl");
-            warningsControl.setAttribute("value", "Turn warnings off");
-            warningsControl.setAttribute("onClick", "warningsOff();");
-            var warningsNote = document.getElementById("warningsNote");
-            warningsNote.innerHTML = "You are set to get a warning before any data is deleted. (Especially useful for touch screens)";            
-        }
+    if (document.getElementById("warningsControl").value === 'Turn warnings off') {
+        const response = confirm("You have selected to turn off warnings. Selecting 'OK' will mean no warnings will show when you click or tap on a delete button.");
+        if (response === true)
+            {
+                document.getElementById("warningsControl").setAttribute("value", "Turn warnings on");
+                document.getElementById("warningsNote").innerHTML = "Warnings are off. Data will be deleted without a popup warning.(Not recommended for touch screens unless care is taken)";            
+            }
+    } else if ((document.getElementById("warningsControl").value === 'Turn warnings on')){
+        const response = confirm("You have selected to turn on warnings. Selecting 'OK' will means warnings will show when you click or tap on a button to delete data.");
+        if (response === true)
+            {
+                document.getElementById("warningsControl").setAttribute("value", "Turn warnings off");
+                document.getElementById("warningsNote").innerHTML = "You are set to get a warning before any data is deleted. (Especially useful for touch screens)";            
+            }
+    }
 }
 
 /*
