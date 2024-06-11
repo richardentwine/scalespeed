@@ -167,6 +167,12 @@ function cancelPass () {
 /*
 Stops a run and records the time
 ToDo - This needs splitting up
+
+functions:
+-stop recording and actual speed in mm and kph
+-covert to kph
+-covert to mph
+
 */
 function stopTime()
 {
