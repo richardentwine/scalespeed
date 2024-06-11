@@ -133,23 +133,24 @@ Starts recording a run
 function startTime()
 {
     start = new Date();
-    var started = document.getElementById("started");
+    const started = document.getElementById("started");
     started.innerHTML = start.toLocaleTimeString();
     
     runningState('started');
     
-    var control = document.getElementById("control");
+    const control = document.getElementById("control");
     control.value = "Stop";
     control.setAttribute("onClick", "javascript: stopTime();");
     
-    var cancelControl = document.getElementById("cancelControl");
+    const cancelControl = document.getElementById("cancelControl");
     cancelControl.setAttribute("onClick", "javascript: cancelPass();");
     
-    var existingData = document.getElementById("stopped").innerHTML;
+    const existingData = document.getElementById("stopped").innerHTML;
     if (!(existingData === "0"))
         {            
             clearData();
         }
+    return 
 }
 
 /*

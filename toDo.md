@@ -8,6 +8,7 @@
 - [x] Amalgamate warningsOff() and warningsOn()
 - [ ] ClearData() refactor to DRY it
 - [ ] Overhaul frontend
+- [ ] Remove global variables
 
 ## Possible changes
 - [ ] Change to TDD
