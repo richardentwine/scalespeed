@@ -5,7 +5,7 @@ let stop;
 /*
 Deletes a row from the results table 
 */
-function deleteRow(deleteButton){
+function deleteRow(deleteButton) {
     let confirmResult;
     const row = deleteButton.parentNode.parentNode;
     const warningStatus = document.getElementById("warningsControl").value;
@@ -28,7 +28,7 @@ function deleteRow(deleteButton){
 /*
 Needed when the table is cleared or when a row is deleted   
 */
-function resetAvTotals(){
+function resetAvTotals() {
     document.getElementById("avTime").innerHTML = "0";
     document.getElementById("avSpeed").innerHTML = "0";
 }
@@ -36,7 +36,7 @@ function resetAvTotals(){
 /*
 Clears the results table
 */
-function clearTable(){
+function clearTable() {
     if (document.getElementById('tableResults').tBodies[0].rows.length !== 0){
         let confirmResult;
         const warningStatus = document.getElementById("warningsControl").getAttribute("onclick");
@@ -55,7 +55,7 @@ function clearTable(){
 /*
 Clears the pass data after a new passed is started, or a pass is cancelled
 */
-function clearData(){
+function clearData() {
     const runTable = document.getElementById("detailedRunInfo");
     const cells = runTable.getElementsByTagName("span");
 
@@ -68,8 +68,7 @@ function clearData(){
 /*
 Calculates the average of all passes as each pass is recorded
 */
-function calculateAverages()
-{
+function calculateAverages() {
     const numRows = document.getElementById('tableResults').tBodies[0].rows.length;
     let averageTimeTotal = 0;
     let averageSpeedTotal = 0;
@@ -130,8 +129,7 @@ function runningState(state) {
 /*
 Starts recording a run
 */
-function startTime()
-{
+function startTime() {
     start = new Date();
     const started = document.getElementById("started");
     started.innerHTML = start.toLocaleTimeString();
@@ -156,15 +154,12 @@ function startTime()
 /*
 Cancels a pass without recording a result
 */
-function cancelPass ()
-{
-    var started;
-    started = document.getElementById("started");
-    started.innerHTML = "0";
+function cancelPass () {
+    document.getElementById("started").innerHTML = "0";;
     
     runningState('cancelled'); 
     
-    var control = document.getElementById("control");
+    const control = document.getElementById("control");
     control.value = "Start";
     control.setAttribute("onClick", "javascript: startTime();");
 }
