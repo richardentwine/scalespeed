@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ScaleSpeed</title>
+        <meta charset="UTF-8">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="scalespeed">
+            <h4>ScaleSpeed Calculator for Model Railways</h4>
+            <div id="runInfo">
+                <table>
+                    <tr><td>Distance travelled(mm):</td><td><input type="text" name="distance" size="9" id="distance" value="300"></td></tr>
+                    <tr><td>Scale:</td><td><select name="scale" id="scale">
+                                <option value="160">2mm (N gauge)</option>
+                                <option value="76.2" selected>4mm (OO gauge)</option>
+                                <option value="43.54">7mm (O gauge)</option>
+                            </select></td></tr>
+                    <tr><td><input type="button" name="control" id="control" value="Start" onclick="startTime();"></td>
+                        <td><input type="button" name="cancelControl" id="cancelControl" value="Cancel" onclick=""></td></tr>
+                </table>
+                <div id="runningState">
+                    <h4>Running state:</h4>
+                    <p>Idle</p>
+                </div>
+                <h4>Results for this pass:</h4>
+
+                <div id="detailedRunInfo">
+                    <table>
+                        <tr><td>Start Time:</td><td><span id="started">0</span></td></tr>
+                        <tr><td>Finish Time:</td><td><span id="stopped">0</span></td></tr>
+                        <tr><td>Time taken (seconds):</td><td><span id="duration">0</span></td></tr>
+                        <tr><td>The speed is:</td><td><span id="actSpeed">0</span> mm/s</td></tr>
+                        <tr><td>which is:</td><td><span id="speedKm">0</span> km/h</td></tr>
+                        <tr><td>which equates to:</td><td><span id="final">0</span> km/h</td></tr>
+                        <tr><td>or:</td><td><span id="mph">0</span> mph</td></tr>  
+                    </table>
+                    <p><input type="button" name="lessDetail" id="lessDetail" class="controlButton" value="Show less Detail" onclick="lessDetail();"></p>
+                </div>
+
+                <div id="basicRunInfo">
+                    <p><span id="basicMph">0</span> mph</p>
+                    <p><input type="button" name="lessDetail" id="moreDetail" class="controlButton" value="Show more detail" onclick="moreDetail();"></p>
+                </div>
+            </div>
+            
+            <div id="resultsDiv">
+            <h4>Results for all passes:</h4>
+                      
+            <p>Average Time: <span id="avTime">0</span> seconds</p>
+            <p>Average Speed: <span id="avSpeed">0</span> Mph</p>
+            
+            <table id="tableResults">
+                <thead><tr><th>Time taken</th><th>Speed</th></tr></thead>
+                <tbody></tbody>
+            </table>
+            <p><input type="button" name="clearTable" id="clearTable" class="controlButton" value="Clear table" onclick="clearTable();"></p>
+            <p><input type="button" name="warningsControl" id="warningsControl" class="controlButton" value="Turn off warnings" onclick="warningsOff();"><br>
+                <span class="note" id="warningsNote">You are set to get a warning before any data is deleted. (Especially useful for touch screens)</span></p>
+            </div>
+            </div>    
+        
+            <div id="instructions">
+                <h3>How to use this tool.</h3>
+                <ol>
+                    <li>Measure the distance between two markers, either ones specially placed for the purpose, or two existing convenient points on a layout. The longer the distance, the less effect starting the timer early or late will have.</li>
+                    <li>Check you have the right scale selected.</li>
+                    <li>Start the timer when the model front of the model passes the first mark, and stop it again when it passes the second. Multiple runs will be recorded and an average for all given. Again, this allows for the effects of starting the timer late or early to be reduced.</li>
+                </ol>
+                <h3>The principle behind this tool</h3>
+                <p>
+                    This tool is designed to allow you to easily measure the time it takes your models to travel a certain distance. The fundamental principle this tool is based on is that a model should take the same amount of time to cover its own length as a full scale prototype takes to cover it’s own length.  
+                </p>
+                <h3>Updates from 24th September 2023</h3>
+                <p>
+                    I haven't done much with this tool over the last few years (the last update being made in February 2020, just before COVID took hold). I've decided it's due some TLC so will be getting some, mainly visual, updates in the next few weeks. 
+                </p>
+            </div>
+        <div id="footer">
+            <p><a href="http://www.rmweb.co.uk/community/index.php?/blog/1520-knappers-scalespeed-tool-blog/">Visit this tools blog on RMweb</a></p>
+            <p>All rights reserved.</p>
+            <p><a href="http://entwinesolutions.co.uk">Entwine Solutions</a></p>
+            <p>Version 2.1.1 24/08/2023</p>
+        </div>
+                <!-- Google analytics code -->
+                <script src="javascript/scalespeed.js"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4918218-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<!-- End of Google analytics code -->
+    </body>
+</html>
