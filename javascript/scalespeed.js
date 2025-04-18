@@ -130,10 +130,10 @@ function runningState(state) {
 Starts recording a run
 */
 function startTime() {
+
     start = new Date();
-    const started = document.getElementById("started");
-    started.innerHTML = start.toLocaleTimeString();
-    
+    document.getElementById("started").innerHTML = start.toLocaleTimeString; 
+
     runningState('started');
     
     const control = document.getElementById("control");
@@ -170,18 +170,17 @@ ToDo - This needs splitting up
 
 functions:
 -stop recording and actual speed in mm and kph
--covert to kph
--covert to mph
+-convert to kph
+-convert to mph
 
 */
 function stopTime()
 {
-    var durationSecs = 0;
-    var durationTime = 0;
+    let durationSecs = 0;
+    let durationTime = 0;
     
-    stop = new Date();
-    var stopped = document.getElementById("stopped");
-    stopped.innerHTML = stop.toLocaleTimeString();
+    const stop = new Date();
+    document.getElementById("stopped").innerHTML = stop.toLocaleTimeString;
     
     runningState('stopped');
     
