@@ -176,6 +176,10 @@ functions:
 */
 function stopTime()
 {
+    //Record the time
+    //Set controls
+    //Calculate and display results
+    
     let durationSecs = 0;
     let durationTime = 0;
     
