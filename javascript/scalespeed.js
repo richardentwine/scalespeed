@@ -174,11 +174,11 @@ functions:
 -convert to mph
 
 */
-function stopTime()
-{
+function stopTime() {
     //Record the time
     //Set controls
-    //Calculate and display results
+    //Calculate results
+    //display results
     
     let durationSecs = 0;
     let durationTime = 0;
@@ -188,18 +188,23 @@ function stopTime()
     
     runningState('stopped');
     
-    var control = document.getElementById("control");
+    const control = document.getElementById("control");
     control.value = "Start";
     control.setAttribute("onClick", "javascript: startTime();");
     
-    var cancelControl = document.getElementById("cancelControl");
+    const cancelControl = document.getElementById("cancelControl");
     cancelControl.setAttribute("onClick", "");
     
     durationTime = stop - start.getTime();
     var duration = document.getElementById("duration");
     durationSecs = durationTime / 1000;
     duration.innerHTML = durationSecs;
-     
+
+    calculateResult();
+
+}
+
+function calculateResult() {
     var speed = 0;
     var actualSpeed = 0;
     var distance = 0;
