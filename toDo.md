@@ -9,6 +9,7 @@
 - [ ] ClearData() refactor to DRY it
 - [ ] Overhaul frontend
 - [ ] Remove global variables
+- [ ] Review time recording method
 
 ## Possible changes
 - [ ] Change to TDD

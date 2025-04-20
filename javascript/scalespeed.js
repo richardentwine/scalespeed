@@ -205,27 +205,27 @@ function stopTime() {
 }
 
 function calculateResult() {
-    var speed = 0;
-    var actualSpeed = 0;
-    var distance = 0;
-    var scale = 0;
-    var finalSpeed = 0;
-    var finalMph = 0;
+    let speed = 0;
+    let actualSpeed = 0;
+    let distance = 0;
+    let scale = 0;
+    let finalSpeed = 0;
+    let finalMph = 0;
     
     distance = document.getElementById("distance").value;
     actualSpeed = distance / durationSecs;
     var actSpeed = document.getElementById("actSpeed");
-    actualSpeed = actualSpeed*100/100;
+    //actualSpeed = actualSpeed*100/100; 
     actSpeed.innerHTML = actualSpeed.toFixed(2);
     scale = document.getElementById("scale").value;
     speed = (distance / 1000000) / (durationSecs / 3600);
-    speed = speed*100/100;
+    //speed = speed*100/100;
     var speedKm = document.getElementById("speedKm");
     speedKm.innerHTML = speed.toFixed(2);
     finalSpeed = speed * scale;
     finalMph = finalSpeed * 0.621371;
-    finalMph = finalMph*100/100;
-    finalSpeed = finalSpeed*100/100;
+    //finalMph = finalMph*100/100;
+    //finalSpeed = finalSpeed*100/100;
     var final = document.getElementById("final");
     final.innerHTML = finalSpeed.toFixed(2);
     var mph = document.getElementById("mph");
