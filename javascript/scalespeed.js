@@ -214,25 +214,15 @@ function calculateResult() {
     
     distance = document.getElementById("distance").value;
     actualSpeed = distance / durationSecs;
-    var actSpeed = document.getElementById("actSpeed");
-    //actualSpeed = actualSpeed*100/100; 
-    actSpeed.innerHTML = actualSpeed.toFixed(2);
+    document.getElementById("actSpeed").innerHTML = actualSpeed.toFixed(2);
     scale = document.getElementById("scale").value;
     speed = (distance / 1000000) / (durationSecs / 3600);
-    //speed = speed*100/100;
-    var speedKm = document.getElementById("speedKm");
-    speedKm.innerHTML = speed.toFixed(2);
+    document.getElementById("speedKm").innerHTML = speed.toFixed(2);
     finalSpeed = speed * scale;
     finalMph = finalSpeed * 0.621371;
-    //finalMph = finalMph*100/100;
-    //finalSpeed = finalSpeed*100/100;
-    var final = document.getElementById("final");
-    final.innerHTML = finalSpeed.toFixed(2);
-    var mph = document.getElementById("mph");
-    mph.innerHTML = finalMph.toFixed(2);
-    var basicMph = document.getElementById("basicMph");
-    basicMph.innerHTML = finalMph.toFixed(2);
-    var tableResults = document.getElementById("tableResults");
+    document.getElementById("final").innerHTML = finalSpeed.toFixed(2);
+    document.getElementById("mph").innerHTML = finalMph.toFixed(2);
+    document.getElementById("basicMph") = finalMph.toFixed(2);
     
     var tableResults = document.getElementById("tableResults").getElementsByTagName('tbody')[0];
     var row = tableResults.insertRow(0);
