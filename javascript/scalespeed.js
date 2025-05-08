@@ -196,7 +196,7 @@ function stopTime() {
     cancelControl.setAttribute("onClick", "");
     
     durationTime = stop - start.getTime();
-    var duration = document.getElementById("duration");
+    let duration = document.getElementById("duration");
     durationSecs = durationTime / 1000;
     duration.innerHTML = durationSecs;
 
@@ -224,11 +224,11 @@ function calculateResult() {
     document.getElementById("mph").innerHTML = finalMph.toFixed(2);
     document.getElementById("basicMph") = finalMph.toFixed(2);
     
-    var tableResults = document.getElementById("tableResults").getElementsByTagName('tbody')[0];
-    var row = tableResults.insertRow(0);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
+    let tableResults = document.getElementById("tableResults").getElementsByTagName('tbody')[0];
+    let row = tableResults.insertRow(0);
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
     cell1.innerHTML = durationSecs.toFixed(2);
     cell2.innerHTML = finalMph.toFixed(2);
     cell3.innerHTML = '<input type="button" name="deleteRow" id="deleteRow" class="controlButton" value="Delete this result" onclick="deleteRow(this);">';  
@@ -240,8 +240,8 @@ function calculateResult() {
 Displays less detail about the last completed run
 */
 function lessDetail() {
-    var lessDetailDiv = document.getElementById("detailedRunInfo").style.display = "none";
-    var moreDetailDiv = document.getElementById("basicRunInfo").style.display="block";
+    let lessDetailDiv = document.getElementById("detailedRunInfo").style.display = "none";
+    let moreDetailDiv = document.getElementById("basicRunInfo").style.display="block";
     
 }
 
@@ -249,7 +249,7 @@ function lessDetail() {
 Displays more detail about the last completed run
 */
 function moreDetail() {
-    var lessDetailDiv = document.getElementById("detailedRunInfo").style.display = "block";
-    var moreDetailDiv = document.getElementById("basicRunInfo").style.display="none";
+    let lessDetailDiv = document.getElementById("detailedRunInfo").style.display = "block";
+    let moreDetailDiv = document.getElementById("basicRunInfo").style.display="none";
     
 }
