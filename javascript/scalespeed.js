@@ -1,7 +1,3 @@
-const displayedState = document.getElementById("runningState").getElementsByTagName('p')[0];
-let start;
-let stop;
-
 /*
 Deletes a row from the results table 
 */
@@ -110,7 +106,8 @@ function toggleWarnings() {
 Updates whether a pass is in the process of being run or not
 */
 function runningState(state) {
-    
+    const displayedState = document.getElementById("runningState").getElementsByTagName('p')[0];
+
     if (state === 'started'){ 
      displayedState.innerHTML = "Running";
      displayedState.classList.add("running");
@@ -148,7 +145,7 @@ function startTime() {
         {            
             clearData();
         }
-    return 
+    return start;
 }
 
 /*
@@ -253,3 +250,4 @@ function moreDetail() {
     let moreDetailDiv = document.getElementById("basicRunInfo").style.display="none";
     
 }
+
