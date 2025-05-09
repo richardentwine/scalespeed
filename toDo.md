@@ -2,7 +2,7 @@
 
 ## Needs doing
 - [x] Switch away from var
-- [ ] Break up StopTime()
+- [x] Break up StopTime()
 - [x] Change poor single character variable names
 - [ ] Amalgamate lessDetail() and moreDetail()
 - [x] Amalgamate warningsOff() and warningsOn()
