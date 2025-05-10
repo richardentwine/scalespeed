@@ -12,5 +12,4 @@
 - [ ] Review time recording method
 
 ## Possible changes
-- [ ] Amalgamate basic and detailed run display elements
 - [ ] Change to TDD
