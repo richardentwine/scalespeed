@@ -234,20 +234,14 @@ function calculateResult() {
 }
 
 /*
-Displays less detail about the last completed run
+Switches level of detail about the last completed run
 */
-function lessDetail() {
-    let lessDetailDiv = document.getElementById("detailedRunInfo").style.display = "none";
-    let moreDetailDiv = document.getElementById("basicRunInfo").style.display="block";
-    
+function detailLevel () {
+    if (document.getElementById("detailedRunInfo").style.display === "block"){
+        document.getElementById("detailedRunInfo").style.display = "none"; 
+        document.getElementById("basicRunInfo").style.display="block";       
+    } else {
+        document.getElementById("detailedRunInfo").style.display = "block";
+        document.getElementById("basicRunInfo").style.display="none";
+    } 
 }
-
-/*
-Displays more detail about the last completed run
-*/
-function moreDetail() {
-    let lessDetailDiv = document.getElementById("detailedRunInfo").style.display = "block";
-    let moreDetailDiv = document.getElementById("basicRunInfo").style.display="none";
-    
-}
-

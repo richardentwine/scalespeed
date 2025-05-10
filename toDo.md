@@ -4,7 +4,7 @@
 - [x] Switch away from var
 - [x] Break up StopTime()
 - [x] Change poor single character variable names
-- [ ] Amalgamate lessDetail() and moreDetail()
+- [x] Amalgamate lessDetail() and moreDetail()
 - [x] Amalgamate warningsOff() and warningsOn()
 - [x] ClearData() refactor to DRY it
 - [ ] Overhaul frontend
