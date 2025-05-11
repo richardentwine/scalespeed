@@ -129,7 +129,7 @@ Starts recording a run
 function startTime() {
 
     start = new Date();
-    document.getElementById("started").innerHTML = start.toLocaleTimeString; 
+    document.getElementById("started").innerHTML = start.toLocaleTimeString(); 
 
     runningState('started');
     
@@ -181,7 +181,7 @@ function stopTime() {
     let durationTime = 0;
     
     const stop = new Date();
-    document.getElementById("stopped").innerHTML = stop.toLocaleTimeString;
+    document.getElementById("stopped").innerHTML = stop.toLocaleTimeString();
     
     runningState('stopped');
     
@@ -197,11 +197,11 @@ function stopTime() {
     durationSecs = durationTime / 1000;
     duration.innerHTML = durationSecs;
 
-    calculateResult();
+    calculateResult(durationSecs);
 
 }
 
-function calculateResult() {
+function calculateResult(durationSecs) {
     let speed = 0;
     let actualSpeed = 0;
     let distance = 0;
@@ -219,7 +219,7 @@ function calculateResult() {
     finalMph = finalSpeed * 0.621371;
     document.getElementById("final").innerHTML = finalSpeed.toFixed(2);
     document.getElementById("mph").innerHTML = finalMph.toFixed(2);
-    document.getElementById("basicMph") = finalMph.toFixed(2);
+    document.getElementById("basicMph").innerHTML = finalMph.toFixed(2);
     
     let tableResults = document.getElementById("tableResults").getElementsByTagName('tbody')[0];
     let row = tableResults.insertRow(0);
