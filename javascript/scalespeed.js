@@ -237,11 +237,13 @@ function calculateResult() {
 Switches level of detail about the last completed run
 */
 function detailLevel () {
-    if (document.getElementById("detailedRunInfo").style.display === "block"){
-        document.getElementById("detailedRunInfo").style.display = "none"; 
-        document.getElementById("basicRunInfo").style.display="block";       
+    const setDetailLevel = document.getElementById("detailedRunInfo");
+
+    if (setDetailLevel.style.display === "" || setDetailLevel.style.display === "block" ){
+        setDetailLevel.style.display = "none"; 
+        document.getElementById("basicRunInfo").style.display = "block";       
     } else {
-        document.getElementById("detailedRunInfo").style.display = "block";
-        document.getElementById("basicRunInfo").style.display="none";
+        setDetailLevel.style.display = "block";
+        document.getElementById("basicRunInfo").style.display = "none";
     } 
 }

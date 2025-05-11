@@ -11,7 +11,7 @@
             <h4>ScaleSpeed Calculator for Model Railways</h4>
             <div id="runInfo">
                 <table>
-                    <tr><td>Distance travelled(mm):</td><td><input type="text" name="distance" size="9" id="distance" value="300"></td></tr>
+                    <tr><td>Distance covered(mm):</td><td><input type="text" name="distance" size="9" id="distance" value="300"></td></tr>
                     <tr><td>Scale:</td><td><select name="scale" id="scale">
                                 <option value="160">2mm (N gauge)</option>
                                 <option value="76.2" selected>4mm (OO gauge)</option>
@@ -36,12 +36,12 @@
                         <tr><td>which equates to:</td><td><span id="final">0</span> km/h</td></tr>
                         <tr><td>or:</td><td><span id="mph">0</span> mph</td></tr>  
                     </table>
-                    <p><input type="button" name="lessDetail" id="lessDetail" class="controlButton" value="Show less Detail" onclick="lessDetail();"></p>
+                    <p><input type="button" name="detailLevel" id="detailLevel" class="controlButton" value="Show less Detail" onclick="detailLevel();"></p>
                 </div>
 
                 <div id="basicRunInfo">
                     <p><span id="basicMph">0</span> mph</p>
-                    <p><input type="button" name="lessDetail" id="moreDetail" class="controlButton" value="Show more detail" onclick="moreDetail();"></p>
+                    <p><input type="button" name="detailLevel" id="detailLevel" class="controlButton" value="Show more detail" onclick="detailLevel();"></p>
                 </div>
             </div>
             
