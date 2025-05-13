@@ -162,20 +162,13 @@ function cancelPass () {
 }
 
 /*
-Stops a run and records the time
-ToDo - This needs splitting up
-
-functions:
--stop recording and actual speed in mm and kph
--convert to kph
--convert to mph
-
+Stops a run and records the time;
+ - Record the time
+ - Set controls
+ - Calculate results
+ - display results
 */
 function stopTime() {
-    //Record the time
-    //Set controls
-    //Calculate results
-    //display results
     
     let durationSecs = 0;
     let durationTime = 0;
@@ -200,7 +193,11 @@ function stopTime() {
     calculateResult(durationSecs);
 
 }
-
+/*
+- Calculates speed in kph
+- Converts to mph
+- Add to table
+*/
 function calculateResult(durationSecs) {
     let speed = 0;
     let actualSpeed = 0;
